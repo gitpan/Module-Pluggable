@@ -20,15 +20,14 @@ is_deeply(\@plugins, \@expected);
 
 
 package MyTest;
-
 use strict;
-use Module::Pluggable;
+sub new { return bless {}, $_[0] }
+
+package MyOtherTest;
+use strict;
+use Module::Pluggable ( package => "MyTest" );
+sub new { return bless {}, $_[0] }
 
 
-sub new {
-    my $class = shift;
-    return bless {}, $class;
-
-}
 1;
 
