@@ -13,7 +13,7 @@ use Carp qw(croak carp);
 # Peter Gibbons: I wouldn't say I've been missing it, Bob! 
 
 
-$VERSION = '2.96';
+$VERSION = '2.97';
 
 =pod
 
@@ -36,6 +36,52 @@ and then later ...
     my $mc = MyClass->new();
     # returns the names of all plugins installed under MyClass::Plugin::*
     my @plugins = $mc->plugins(); 
+
+=head1 EXAMPLE
+
+Why would you want to do this? Say you have something that wants to pass an
+object to a number of different plugins in turn. For example you may 
+want to extract meta-data from every email you get sent and do something
+with it. Plugins make sense here because then you can keep adding new 
+meta data parsers and all the logic and docs for each one will be 
+self contained and new handlers are easy to add without changing the 
+core code. For that, you might do something like ...
+
+    package Email::Examiner;
+
+    use strict;
+    use Email::Simple;
+    use Module::Pluggable require => 1;
+
+    sub handle_email {
+        my $self  = shift;
+        my $email = shift;
+
+        foreach my $plugin ($self->plugins) {
+            $plugin->examine($email);
+        }
+
+        return 1;
+    }
+
+
+
+.. and all the plugins will get a chance in turn to look at it.
+
+This can be trivally extended so that plugins could save the email
+somewhere and then no other plugin should try and do that. 
+Simply have it so that the C<examine> method returns C<1> if 
+it has saved the email somewhere. You might also wnat to be paranoid
+and check to see if the plugin has an C<examine> method.
+
+        foreach my $plugin ($self->plugins) {
+            next unless $plugin->can('examine');
+            last if     $plugin->examine($email);
+        }
+
+
+And so on. The sky's the limit.
+
 
 =head1 DESCRIPTION
 
@@ -292,13 +338,16 @@ sub import {
                 # this isn't perfect and won't find multiple plugins per file
                 #my $cwd = Cwd::getcwd;
                 my @files = ();
-                File::Find::find( { no_chdir => 1, wanted =>
-                    sub { # Inlined from File::Find::Rule C< name => '*.pm' >
-                        return unless $File::Find::name =~ /\.pm$/;
-                        (my $path = $File::Find::name) =~ s#^\\./##;
-                        push @files, $path;
-                    }},
-                    $sp );
+                { # for the benefit of perl 5.6.1's Find, localize topic
+                  local $_;
+                  File::Find::find( { no_chdir => 1, wanted =>
+                      sub { # Inlined from File::Find::Rule C< name => '*.pm' >
+                          return unless $File::Find::name =~ /\.pm$/;
+                          (my $path = $File::Find::name) =~ s#^\\./##;
+                          push @files, $path;
+                      }},
+                      $sp );
+                }
                 #chdir $cwd;
 
                 # foreach one we've found 
