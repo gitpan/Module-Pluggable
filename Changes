@@ -1,3 +1,13 @@
+2008-01-31 - 3.7 
+    Ignore editor cruft by default (Dave Rolsky and Matt Trout)
+    Doc patches (Matt Trout)
+    Prevent prototype mismatch warnings under Error.pm (Christopher H. Laco)
+    Don't pick up the ::SUPER pseudo stash in 5.8 (Alex Vandiver)
+    Make things work under VOS (Nicholas Clark and Paul Green)
+    Fix warning under Devel::Cover (Brian Cassidy)
+    Make tests run under Taint again
+    Get rid of Build.PL 
+        
 2007-04-07 - 3.6
     Include blead perl patch from Craig Berry that gives better 
     Module::Pluggable::Object::search_paths portability as 
@@ -11,7 +21,7 @@
     Module::Pluggable::* modules are installed.
 
 2006-11-24 - 3.3
-    Few more patches from Jos Boumans to get read for CORE
+    Few more patches from Jos Boumans to get ready for CORE
 
 2006-11-15 - 3.2
     Remove Class::Inspector dependency and inline code

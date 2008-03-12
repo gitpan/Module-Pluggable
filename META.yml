@@ -1,27 +1,15 @@
----
-name: Module-Pluggable
-version: 3.6
-author:
-  - 'Simon Wistow <simon@thegestalt.org>'
-abstract: automatically give your module the ability to have plugins
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  File::Basename: 0
-  File::Spec: 3.00
-  Test::More: 0.62
-provides:
-  Devel::InnerPackage:
-    file: lib/Devel/InnerPackage.pm
-    version: 0.3
-  Module::Pluggable:
-    file: lib/Module/Pluggable.pm
-    version: 3.6
-  Module::Pluggable::Object:
-    file: lib/Module/Pluggable/Object.pm
-    version: 3.6
-generated_by: Module::Build version 0.2801
+--- #YAML:1.0
+name:                Module-Pluggable
+version:             3.7
+abstract:            ~
+license:             ~
+author:              ~
+generated_by:        ExtUtils::MakeMaker version 6.38
+distribution_type:   module
+requires:     
+    File::Basename:                0
+    File::Spec:                    3.00
+    Test::More:                    0.62
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
