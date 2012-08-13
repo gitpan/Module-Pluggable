@@ -1,3 +1,15 @@
+2012-07-20 - 4.1
+    Allow triggers on events which gives a powerful way to modify behaviour (Tim Brody, Dan Dascalescu, Paul Evans, Jens Rehsack)
+    Put documentation in about behaviour under blib and test, allow searching outside blib under test (suggestion from Stephen Baynes)
+    Made following symlinks the default behaviour, added ability to turn that off (Aran Deltac)
+    Fix installation path (Matthias Dietrich, Todd Rinaldo)
+    Allow min_depth and max_depth (as per suggestion from Jens Rehsack)
+    Set our @INC up to include and prefer our search_dirs if necessary (as per suggestion from Ian Goodacre)
+    Switch to Module::Build
+    
+2012-01-03 - 4.0
+    Don't use defined on an array (it's deprecated)
+
 2009-03-02 - 3.9 
     Allow inner packages when in a one file situation (suggestion from Christopher Brown)
     Fix bug with requiring skipped packages (from Jos Boumans)

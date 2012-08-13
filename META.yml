@@ -1,23 +1,30 @@
---- #YAML:1.0
-name:               Module-Pluggable
-version:            4.0
-abstract:           ~
-author:  []
-license:            unknown
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+---
+name: Module-Pluggable
+version: 4.1
+author:
+  - 'Simon Wistow <simon@thegestalt.org>'
+abstract: automatically give your module the ability to have plugins
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 build_requires:
-    ExtUtils::MakeMaker:  0
+  Test::More: 0.62
 requires:
-    File::Basename:  0
-    File::Spec:      3.00
-    Test::More:      0.62
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
+  File::Basename: 0
+  File::Spec: 3.00
+configure_requires:
+  Module::Build: 0.38
+provides:
+  Devel::InnerPackage:
+    file: lib/Devel/InnerPackage.pm
+    version: 0.4
+  Module::Pluggable:
+    file: lib/Module/Pluggable.pm
+    version: 4.1
+  Module::Pluggable::Object:
+    file: lib/Module/Pluggable/Object.pm
+    version: 4.1
+generated_by: Module::Build version 0.35
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
