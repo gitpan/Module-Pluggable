@@ -38,11 +38,11 @@
       },
       "Module::Pluggable" : {
          "file" : "lib/Module/Pluggable.pm",
-         "version" : "4.2"
+         "version" : "4.3"
       },
       "Module::Pluggable::Object" : {
          "file" : "lib/Module/Pluggable/Object.pm",
-         "version" : "4.2"
+         "version" : "4.3"
       }
    },
    "release_status" : "stable",
@@ -51,5 +51,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "4.2"
+   "version" : "4.3"
 }
