@@ -1,31 +1,30 @@
 ---
-abstract: 'automatically give your module the ability to have plugins'
+name: Module-Pluggable
+version: 4.4
 author:
   - 'Simon Wistow <simon@thegestalt.org>'
+abstract: automatically give your module the ability to have plugins
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 build_requires:
   Test::More: 0.62
+requires:
+  File::Basename: 0
+  File::Spec: 3.00
 configure_requires:
   Module::Build: 0.38
-dynamic_config: 1
-generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.110930'
-license: perl
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
-name: Module-Pluggable
 provides:
   Devel::InnerPackage:
     file: lib/Devel/InnerPackage.pm
     version: 0.4
   Module::Pluggable:
     file: lib/Module/Pluggable.pm
-    version: 4.3
+    version: 4.4
   Module::Pluggable::Object:
     file: lib/Module/Pluggable/Object.pm
-    version: 4.3
-requires:
-  File::Basename: 0
-  File::Spec: 3.00
-resources:
-  license: http://dev.perl.org/licenses/
-version: 4.3
+    version: 4.4
+generated_by: Module::Build version 0.35
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
