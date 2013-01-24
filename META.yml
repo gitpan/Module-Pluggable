@@ -19,13 +19,14 @@ provides:
     version: 0.4
   Module::Pluggable:
     file: lib/Module/Pluggable.pm
-    version: 4.5
+    version: 4.6
   Module::Pluggable::Object:
     file: lib/Module/Pluggable/Object.pm
-    version: 4.5
+    version: 4.6
 requires:
   File::Basename: 0
   File::Spec: 3.00
+  if: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 4.5
+version: 4.6
