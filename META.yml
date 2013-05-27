@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.38
 dynamic_config: 1
-generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112621'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,14 +19,14 @@ provides:
     version: 0.4
   Module::Pluggable:
     file: lib/Module/Pluggable.pm
-    version: 4.7
+    version: 4.8
   Module::Pluggable::Object:
     file: lib/Module/Pluggable/Object.pm
-    version: 4.6
+    version: 4.8
 requires:
   File::Basename: 0
   File::Spec: 3.00
   if: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 4.7
+version: 4.8
