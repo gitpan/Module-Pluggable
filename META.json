@@ -4,7 +4,7 @@
       "Simon Wistow <simon@thegestalt.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112621",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.120351",
    "license" : [
       "perl_5"
    ],
@@ -26,9 +26,9 @@
       },
       "runtime" : {
          "requires" : {
-            "File::Basename" : 0,
+            "File::Basename" : "0",
             "File::Spec" : "3.00",
-            "if" : 0
+            "if" : "0"
          }
       }
    },
@@ -39,18 +39,21 @@
       },
       "Module::Pluggable" : {
          "file" : "lib/Module/Pluggable.pm",
-         "version" : "4.8"
+         "version" : "5.0"
       },
       "Module::Pluggable::Object" : {
          "file" : "lib/Module/Pluggable/Object.pm",
-         "version" : "4.8"
+         "version" : "5.0"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "license" : [
          "http://dev.perl.org/licenses/"
-      ]
+      ],
+      "repository" : {
+         "url" : "https://github.com/simonwistow/Module-Pluggable"
+      }
    },
-   "version" : "4.8"
+   "version" : "5.0"
 }
