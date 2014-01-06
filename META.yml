@@ -19,10 +19,10 @@ provides:
     version: 0.4
   Module::Pluggable:
     file: lib/Module/Pluggable.pm
-    version: 5.0
+    version: 5.1
   Module::Pluggable::Object:
     file: lib/Module/Pluggable/Object.pm
-    version: 5.0
+    version: 5.1
 requires:
   File::Basename: 0
   File::Spec: 3.00
@@ -30,4 +30,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: https://github.com/simonwistow/Module-Pluggable
-version: 5.0
+version: 5.1
